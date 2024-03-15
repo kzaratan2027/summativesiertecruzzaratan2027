@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Moduli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #3b3b3b;
+            user-select: none;
+        }
+        h1{
+            font-family: 'Press Start 2P', system-ui;
+    color: #ff0000;
+    text-align: center;
+    user-select: none;
+        }
+        .red{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #810000;
+            user-select: none;
+            border: 5px solid black;
+        }
+        .green{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #639371;
+            user-select: none;
+            border: 5px solid black;
+        }
+        .yellow{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #d5a759;
+            user-select: none;
+            border: 5px solid black;
+        }
+        .blue{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #004479;
+            user-select: none;
+            border: 5px solid black;
+        }
+        .noselect{
+            user-select: none;
+        }
+
+
+
+
+
+
+
+        .number {
+      font-size: 80px;
+      margin: 10px;
+      opacity: 0;
+    }
+    .flashed {
+      opacity: 1;
+    }
+
+    .yuhh {
+      width: 200px;
+      height: 200px;
+      border: 5px solid black;
+      background-color: #626262; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cont {
+      text-align: center; 
+    }
+    .numcont { 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      height: 120px;
+      border: 3px solid rgb(46, 46, 46);
+      background-color: #000000;
+      margin-left: 5px;
+      color: rgb(0, 255, 0);
+    }
+    #check { 
+      border: 3px solid rgb(46, 46, 46);
+      background-color: #000000;
+      color: rgb(0, 255, 0);
+    }
+    #inp { 
+      border: 2px solid rgb(173, 173, 173);
+      background-color: #000000;
+      color: rgb(0, 255, 0);
+    }
+    #ehhmazing{
+        margin-left: 200px;
+        margin-top: 50px;
+
+    }
+    #ehhmazing2{
+        margin-left: 900px;
+        margin-top: -212px;
+    }
+    #inp{
+      font-family: 'Press Start 2P', system-ui;
+      font-size: 8px;
+    }
+    </style>
+</head>
+<body id="amazinglol">
+
+
+    
+
+<h1 id="rawrskibidi" onclick="textmanip()">Begin Shift?</h1>
+<div id="ehhmazing" style="display: inline-block;">
+    <h1 id="tes" style="display: none;">&nbsp;</h1>
+    <h1 id="answer" style="display: none;">&nbsp;</h1>
+    <div class="red noselect" id="redid" style="display: none;" onclick="redflash(); setTimeout(redflashoff, 100); answer1()"></div>
+    <div class="green noselect" id="greenid" style="display: none;" onclick="greenflash(); setTimeout(greenflashoff, 100); answer2()"></div>
+<div class="noselect"></div>
+    <div class="yellow noselect" id="yellowid" style="display: none;"  onclick="yellowflash(); setTimeout(yellowflashoff, 100); answer3()"></div>
+    <div class="blue noselect" id="blueid"  style="display: none;" onclick="blueflash(); setTimeout(blueflashoff, 100); answer4()"></div>
+
+
+    <button onclick="startgame()" id="funny" style="display: none;" class="noselect">start</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="ehhmazing2" style="display: none;">
+        <div class="yuhh">
+            <br>
+            <div class="cont">
+              <div class="numcont" id="numbers"></div>
+              <input type="text" id="inp" placeholder="Enter numbers..."> 
+              <button id="next" onclick="nextround()" style="display: none;">Start</button>
+              <button id="check" onclick="check()">check</button>
+            </div>
+          </div> 
+        
+            
+    </div>
+    <script>
+      var universalroundcounter = 0;
+
+
+
+
+
+var randee = Math.floor((Math.random() * 10) + 1)%4;
+var beepbooprememberer = [];
+var temprememberer = 0;
+var roundnum = 1;
+var score = 0;
+var a=500;
+var bieber=0;
+var helpme=0;
+var plshelpme=0;
+var textval=0;
+function textmanip(){
+if(textval==0){
+    document.getElementById('rawrskibidi').style.color = '#F5F5F5';
+    document.getElementById('rawrskibidi').innerHTML='Welcome Intern!';
+    textval++;
+}
+else if(textval==1){
+    document.getElementById('rawrskibidi').innerHTML='My name is';
+    textval++;
+}
+else if(textval==2){
+    document.getElementById('rawrskibidi').innerHTML='My name is.';
+    textval++;
+}
+else if(textval==3){
+    document.getElementById('rawrskibidi').innerHTML='My name is..';
+    textval++;
+}
+else if(textval==4){
+    document.getElementById('rawrskibidi').innerHTML='My name is...';
+    textval++;
+}
+else if(textval==5){
+    document.getElementById('rawrskibidi').innerHTML='Actually you need not know about that!';
+    textval++;
+}
+else if(textval==6){
+    document.getElementById('rawrskibidi').innerHTML='Our factory here produces widgets...';
+    textval++;
+}
+else if(textval==7){
+    document.getElementById('rawrskibidi').innerHTML='and you are part of the lucky few who get to work making them!';
+    textval++;
+}
+else if(textval==8){
+    document.getElementById('rawrskibidi').innerHTML='Hmm?';
+    textval++;
+}
+else if(textval==9){
+    document.getElementById('rawrskibidi').innerHTML='You asking what widgets are?';
+    textval++;
+}
+else if(textval==10){
+    document.getElementById('rawrskibidi').innerHTML='You need not know about that either!';
+    textval++;
+}
+else if(textval==11){
+    document.getElementById('rawrskibidi').innerHTML='As long as our profits go up along with your salary no one needs to know!';
+    textval++;
+}
+else if(textval==12){
+    document.getElementById('rawrskibidi').innerHTML='Anyways...';
+    textval++;
+}
+else if(textval==13){
+    document.getElementById('rawrskibidi').innerHTML='Our widgets are produced by Memory Moduli(tm).';
+    textval++;
+}
+else if(textval==14){
+    document.getElementById('rawrskibidi').innerHTML='All you have to do is remember what the machine does and do an action accordingly.';
+    textval++;
+}
+else if(textval==15){
+    document.getElementById('rawrskibidi').innerHTML='Simple, right?';
+    textval++;
+}
+else if(textval==16){
+    document.getElementById('rawrskibidi').innerHTML='Huh?';
+    textval++;
+}
+else if(textval==17){
+    document.getElementById('rawrskibidi').innerHTML='You askin why we did not just let the machines do everything?';
+    textval++;
+}
+else if(textval==18){
+    document.getElementById('rawrskibidi').innerHTML='Well we gotta give people some jobs, it is a tough world out there!';
+    textval++;
+}
+else if(textval==19){
+    document.getElementById('rawrskibidi').innerHTML='Also because we umm...';
+    textval++;
+}
+else if(textval==20){
+    document.getElementById('rawrskibidi').innerHTML='could not afford the upgrade. :p';
+    textval++;
+}
+
+
+
+
+else if(textval==21){
+    document.getElementById('rawrskibidi').innerHTML='This is the first Memory Moduli(tm) you will be using,';
+    textval++;
+    document.getElementById('redid').style.display='inline-block';
+    document.getElementById('blueid').style.display='inline-block';
+    document.getElementById('yellowid').style.display='inline-block';
+    document.getElementById('greenid').style.display='inline-block';
+}
+else if(textval==22){
+    document.getElementById('rawrskibidi').innerHTML='called Simon The Destroyer,';
+    textval++;
+}
+else if(textval==23){
+    document.getElementById('rawrskibidi').innerHTML='Melter of Brains,';
+    textval++;
+}
+else if(textval==24){
+    document.getElementById('rawrskibidi').innerHTML='Jr.';
+    textval++;
+}
+else if(textval==25){
+    document.getElementById('rawrskibidi').innerHTML='Sr.';
+    textval++;
+}
+else if(textval==26){
+    document.getElementById('rawrskibidi').innerHTML='the III';
+    textval++;
+}
+else if(textval==27){
+    document.getElementById('rawrskibidi').innerHTML='(tm).';
+    textval++;
+}
+else if(textval==28){
+    document.getElementById('rawrskibidi').innerHTML='Or Simon for short.';
+    textval++;
+}
+else if(textval==29){
+    document.getElementById('rawrskibidi').innerHTML='He will light up the panels in a certain order.';
+    textval++;
+}
+else if(textval==30){
+    document.getElementById('rawrskibidi').innerHTML='You just have to copy what he did.';
+    textval++;
+}
+else if(textval==31){
+    document.getElementById('rawrskibidi').innerHTML='You got it?';
+    textval++;
+}
+else if(textval==32){
+    document.getElementById('rawrskibidi').innerHTML='Good.';
+    textval++;
+}
+else if(textval==33){
+    document.getElementById('rawrskibidi').innerHTML='Imma take a coffee break real quick.';
+    textval++;
+}
+else if(textval==34){
+    document.getElementById('rawrskibidi').innerHTML='You got this champ! :p';
+    textval++;
+}
+else if(textval==35){
+    document.getElementById('rawrskibidi').innerHTML=' ';
+    document.getElementById('rawrskibidi').style.display='none';
+    textval++;
+    startgame();
+}
+else if(textval==36){
+    document.getElementById('rawrskibidi').innerHTML='Nice work intern!';
+    textval++;
+}
+else if(textval==37){
+    document.getElementById('rawrskibidi').innerHTML='You have been promoted...';
+    textval++;
+}
+else if(textval==38){
+    document.getElementById('rawrskibidi').innerHTML='To Intern+!';
+    textval++;
+}
+else if(textval==39){
+    document.getElementById('rawrskibidi').innerHTML='Now you get a 0.00001% increase to your salary!';
+    textval++;
+}
+else if(textval==40){
+    document.getElementById('rawrskibidi').innerHTML='But with great power,';
+    textval++;
+}
+else if(textval==41){
+    document.getElementById('rawrskibidi').innerHTML='comes...';
+    textval++;
+}
+else if(textval==42){
+    document.getElementById('rawrskibidi').innerHTML='I forgot the line.';
+    textval++;
+}
+else if(textval==43){
+    document.getElementById('rawrskibidi').innerHTML='Anyways you have to manage another Memory Moduli(tm) now.';
+    textval++;
+}
+else if(textval==44){
+    document.getElementById('rawrskibidi').innerHTML='Its just Billy(tm).';
+    textval++;
+}
+else if(textval==45){
+    document.getElementById('rawrskibidi').style.color='#00ff00';
+    document.getElementById('redid').style.display='inline-block';
+    document.getElementById('blueid').style.display='inline-block';
+    document.getElementById('yellowid').style.display='inline-block';
+    document.getElementById('greenid').style.display='inline-block';
+    document.getElementById('rawrskibidi').innerHTML='&#60;hi im billy&#62;';
+    textval++;
+    document.getElementById('ehhmazing2').style.display = 'block';
+}
+else if(textval==46){
+    document.getElementById('rawrskibidi').style.color = '#F5F5F5';
+    document.getElementById('rawrskibidi').innerHTML='Billy will give you a sequence of digits.';
+    textval++;
+}
+else if(textval==47){
+    document.getElementById('rawrskibidi').innerHTML='You gotta type them back at him.';
+    textval++;
+}
+else if(textval==48){
+    document.getElementById('rawrskibidi').style.color='#00ff00';
+    document.getElementById('rawrskibidi').innerHTML='&#60;lets play!&#62;';
+    textval++;
+}
+else if(textval==49){
+    document.getElementById('rawrskibidi').style.color = '#F5F5F5';
+    document.getElementById('rawrskibidi').innerHTML='Looks like its ready.';
+    textval++;
+}
+else if(textval==50){
+    document.getElementById('rawrskibidi').innerHTML='Goodluck!';
+    textval++;
+}
+
+
+
+
+
+
+
+else if(textval==51){
+    document.getElementById('rawrskibidi').innerHTML='Also you have to deal with Simon as well.';
+    textval++;
+}
+else if(textval==52){
+    document.getElementById('rawrskibidi').innerHTML='See ya later intern!';
+    textval++;
+}
+else if(textval==53){
+    document.getElementById('rawrskibidi').innerHTML=' ';
+    document.getElementById('rawrskibidi').style.display='none';
+    textval++;
+    startgame2();
+}
+}
+
+function startgame(){
+    universalroundcounter = 1;
+    setTimeout(randeeing, 1000);
+}
+function startgame2(){
+    setTimeout(randeeing, 1000);
+    setTimeout(nextround, 1000);
+}
+function randeeing(){
+    document.getElementById('funny').style.pointerEvents = 'none';
+    score = roundnum-1;
+    universalroundcounter++;
+    document.querySelector('#funny').innerHTML ='Score: '+score;
+    document.getElementById('redid').style.pointerEvents = 'none';
+document.getElementById('greenid').style.pointerEvents = 'none';
+document.getElementById('yellowid').style.pointerEvents = 'none';
+document.getElementById('blueid').style.pointerEvents = 'none';
+    for (let i = 0; i<roundnum; i++) {
+
+        setTimeout(randeelol, a);
+        a+=400;
+}
+document.getElementById('tes').innerHTML = '';
+document.getElementById('answer').innerHTML = '';
+bieber=0;
+a=500;
+
+
+roundnum++;
+}
+
+function randeelol(){
+randee = Math.floor((Math.random() * 10) + 1)%4;
+    if(randee==0){
+    redflash(); 
+    setTimeout(redflashoff, 100);
+
+    }
+    else if(randee==1){
+        greenflash(); 
+        setTimeout(greenflashoff, 100);
+    }
+    else if(randee==2){
+        yellowflash(); 
+        setTimeout(yellowflashoff, 100);
+    }
+    else if(randee==3){
+        blueflash(); 
+        setTimeout(blueflashoff, 100);
+    }
+    beepbooprememberer[bieber]=randee;
+    document.getElementById('tes').innerHTML += beepbooprememberer[bieber];
+    bieber+=1;
+    helpme=document.getElementById('tes').innerHTML;
+    if(helpme.length==roundnum-1){
+        document.getElementById('redid').style.pointerEvents = 'auto';
+document.getElementById('greenid').style.pointerEvents = 'auto';
+document.getElementById('yellowid').style.pointerEvents = 'auto';
+document.getElementById('blueid').style.pointerEvents = 'auto';
+    }
+}
+
+
+
+function redflash(){
+    document.getElementById('redid').style.backgroundColor = '#ff0000';
+    document.getElementById('redid').style.borderColor = 'white';
+}
+function redflashoff(){
+    document.getElementById('redid').style.backgroundColor = '#810000';
+    document.getElementById('redid').style.borderColor = 'black';
+}
+
+
+function greenflash(){
+    document.getElementById('greenid').style.backgroundColor = '#a1f3ba';
+    document.getElementById('greenid').style.borderColor = 'white';
+}
+function greenflashoff(){
+    document.getElementById('greenid').style.backgroundColor = '#639371';
+    document.getElementById('greenid').style.borderColor = 'black';
+}
+
+
+function yellowflash(){
+    document.getElementById('yellowid').style.backgroundColor = '#ffdb9e';
+    document.getElementById('yellowid').style.borderColor = 'white';
+}
+function yellowflashoff(){
+    document.getElementById('yellowid').style.backgroundColor = '#d5a759';
+    document.getElementById('yellowid').style.borderColor = 'black';
+}
+
+
+
+function blueflash(){
+    document.getElementById('blueid').style.backgroundColor = '#71addb';
+    document.getElementById('blueid').style.borderColor = 'white';
+}
+function blueflashoff(){
+    document.getElementById('blueid').style.backgroundColor = '#004479';
+    document.getElementById('blueid').style.borderColor = 'black';
+}
+
+
+
+
+function answer1(){
+    document.getElementById('answer').innerHTML += '0';
+    plshelpme=document.getElementById('answer').innerHTML;
+   if(document.getElementById('tes').innerHTML==document.getElementById('answer').innerHTML){
+    if(universalroundcounter==8){
+        roundnum=1;
+        phase2();
+    }
+    else{
+    randeeing();
+    }
+   }
+   else if(helpme.length==plshelpme.length){        
+ggulost();
+   }
+}
+function answer2(){
+    document.getElementById('answer').innerHTML += '1';
+    plshelpme=document.getElementById('answer').innerHTML;
+   if(document.getElementById('tes').innerHTML==document.getElementById('answer').innerHTML){
+    if(universalroundcounter==8){
+       
+            roundnum=1;
+            phase2();
+        
+    }
+    else{
+    randeeing();
+    }
+   }
+   else if(helpme.length==plshelpme.length){
+    ggulost();
+   }
+}
+function answer3(){
+    document.getElementById('answer').innerHTML += '2';
+    plshelpme=document.getElementById('answer').innerHTML;
+   if(document.getElementById('tes').innerHTML==document.getElementById('answer').innerHTML){
+    if(universalroundcounter==8){
+        roundnum=1;
+        phase2();
+    }
+    else{
+    randeeing();
+    }
+   }
+   else if(helpme.length==plshelpme.length){
+    ggulost();
+   }
+}
+function answer4(){
+    document.getElementById('answer').innerHTML += '3';
+    plshelpme=document.getElementById('answer').innerHTML;
+   if(document.getElementById('tes').innerHTML==document.getElementById('answer').innerHTML){
+    if(universalroundcounter==8){
+        roundnum=1;
+        phase2();
+    }
+    else{
+    randeeing();
+    }
+   }
+   else if(helpme.length==plshelpme.length){
+    ggulost();
+   }
+}
+
+function ggulost(){
+    document.getElementById('amazinglol').style.backgroundColor='black';    
+    document.getElementById('redid').style.display='none';
+    document.getElementById('blueid').style.display='none';
+    document.getElementById('yellowid').style.display='none';
+    document.getElementById('greenid').style.display='none';  
+    document.getElementById('ehhmazing2').style.display='none';  
+    document.getElementById('rawrskibidi').style.display='block';    
+    document.getElementById('rawrskibidi').innerHTML='You got fired. FINAL SCORE: '+universalroundcounter; 
+    document.getElementById("rawrskibidi").addEventListener("click", function(event){
+        event.preventDefault()
+      }); 
+}
+
+
+function phase2(){
+    document.getElementById('redid').style.display='none';
+    document.getElementById('blueid').style.display='none';
+    document.getElementById('yellowid').style.display='none';
+    document.getElementById('greenid').style.display='none';
+    document.getElementById('rawrskibidi').style.display='block';
+    textmanip();
+}
+
+
+
+      const numdiv = document.getElementById("numbers");
+      let numberofyapping = 2;
+      let userinputyeah;  
+      let userInputyeah;  
+      let numray;
+      let yuh;
+      let yuh2;
+
+      function gennums(count) {
+      numray = [];
+      for (let i = 0; i <count; i++) {
+        numray.push(Math.floor(Math.random() * 10));
+        yuh = numray.toString();
+        yuh2 = yuh.split(',', numberofyapping);
+      }
+      return numray;
+      }
+
+      function flash1(numbers) {
+      numbers.forEach((number, index) => {
+      const span = document.createElement("span");
+      span.classList.add("number");
+      span.textContent = number;
+        numdiv.appendChild(span);
+
+        setTimeout(() => {
+          span.classList.add("flashed");
+          }, index * 500);
+
+        setTimeout(() => {
+          span.remove();
+          }, (index + 1) * 500);
+          });
+      }
+      function check () {
+        universalroundcounter++;
+//         if(numberofyapping==9){
+//   numberofyapping=1;
+//     alert('lol'+universalroundcounter);
+//   }
+//   else{
+        userInputyeah = document.getElementById("inp").value;
+        userinputyeah = userInputyeah.split('', numberofyapping);
+        console.log(userInputyeah.split('', numberofyapping));
+        if (JSON.stringify(userinputyeah) ==JSON.stringify(yuh2)) {
+          flash1(gennums(++numberofyapping));
+          document.getElementById("inp").value = ""; 
+        } else {
+          ggulost(); 
+          document.getElementById("next").disabled = false;
+          document.getElementById("inp").value = "";  
+        }
+//       }
+    }
+      function nextround() {
+        numberofyapping =2; 
+        const flash2 = gennums(numberofyapping);
+        flash1(flash2);
+        document.getElementById("next").disabled = true;
+      }
+    </script>
+</body>
+</html>

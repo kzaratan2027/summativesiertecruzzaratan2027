@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <title>About the Developers</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+        <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href = 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel = 'stylesheet'>
+        <link rel = "icon" href = "logo.png" type = "image/x-icon">
+        <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel = "stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity = "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <style>
+            * {
+                border: 0;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            .bye{
+                background-color: black;
+            }
+
+            body{
+                background-image: url('https://img.freepik.com/premium-photo/video-game-controllers-grey-background_392895-388303.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+                font-family: Lato, Helvetica, Arial, sans-serif;
+            }
+
+            a {
+                color: inherit;
+                font-family: inherit;
+                font-size: inherit;
+                text-decoration: none;
+            }
+
+            #navbar {
+                background-image: url('https://img.freepik.com/free-vector/grey-marble-texture_1100-155.jpg');
+                background-size: cover;
+                padding-bottom: 3.5%;
+                color: #004479;
+                position: fixed;
+                top: 0;
+                height: 60px;
+                line-height: 60px;
+                width: 100vw;
+                z-index: 10;
+            }
+
+            .nav-wrapper {
+                margin: auto;
+                text-align: center;
+                width: 70%;
+            } 
+
+            @media(max-width: 768px) {
+                .nav-wrapper {
+                    width: 90%;
+                }
+            }
+
+            @media(max-width: 638px) {
+                .nav-wrapper {
+                    width: 100%;
+                }
+            }
+
+            #navbar ul {
+                display: inline-block;
+                float: right;
+                list-style: none;
+                margin-top: -2px;
+                text-align: right;
+                transition: transform 0.5s ease-out;
+                -webkit-transition: transform 0.5s ease-out;
+                } 
+                
+                @media(max-width: 640px) {
+                    #navbar ul {
+                        display: none;
+                    }
+                } 
+                
+                @media(orientation: landscape) {
+                    #navbar ul {
+                        display: inline-block;
+                    }
+                }
+
+                #navbar li {
+                    display: inline-block;
+                }
+
+                #navbar li a {
+                    color: rgb(13, 26, 38);
+                    display: block;
+                    font-size: 0.7em;
+                    height: 50px;
+                    letter-spacing: 1px;
+                    margin: 0 20px;
+                    padding: 0 4px;
+                    position: relative;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: all 0.5s ease;
+                    -webkit-transition: all 0.5s ease;
+                }
+
+                #navbar li a:hover {
+                    border-bottom: 1px solid #0061ac;
+                    color: #0061ac;
+                    transition: all 1s ease;
+                    -webkit-transition: all 1s ease;
+                }
+
+                #navbar li a:before, #navbar li a:after {
+                    content: '';
+                    position: absolute;
+                    width: 0%;
+                    height: 1px;
+                    bottom: -1px;
+                    background: rgb(13, 26, 38);
+                }
+
+                #navbar li a:before {
+                    left: 0;
+                    transition: 0.5s;
+                }
+
+                #navbar li a:after {
+                    background: rgb(13, 26, 38);
+                    right: 0;
+                }
+
+                #navbar li a:hover:before {
+                    background: rgb(13, 26, 38);
+                    width: 100%;
+                    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+                }
+
+                #navbar li a:hover:after {
+                    background: transparent;
+                    width: 100%;
+                }
+
+                @media(max-width: 640px) {
+                    .menuIcon {
+                        cursor: pointer;
+                        display: block;
+                        position: fixed;
+                        right: 15px;
+                        top: 20px;
+                        height: 23px;
+                        width: 27px;
+                        z-index: 12;
+                    }
+
+                    .icon-bars {
+                        background: rgb(13, 26, 38);
+                        position: absolute;
+                        left: 1px;
+                        top: 45%;
+                        height: 2px;
+                        width: 20px;
+                        -webkit-transition: 0.4s;
+                        transition: 0.4s;
+                    } 
+
+                    .icon-bars::before {
+                        background: rgb(13, 26, 38);
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: -8px;
+                        height: 2px;
+                        width: 20px;
+                        -webkit-transition: top 0.2s ease 0.3s;
+                        transition: top 0.2s ease 0.3s;
+                        -webkit-transition: 0.3s width 0.4s;
+                        transition: 0.3s width 0.4s;
+                    }
+
+                    .icon-bars::after {
+                        margin-top: 0px;
+                        background: rgb(13, 26, 38);
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -8px;
+                        height: 2px;
+                        width: 20px;
+                        -webkit-transition: top 0.2s ease 0.3s;
+                        transition: top 0.2s ease 0.3s;
+                        -webkit-transition: 0.3s width 0.4s;
+                        transition: 0.3s width 0.4s;
+                    }
+
+
+                    .icon-bars.overlay {
+                        background: rgb(97, 114, 129);
+                        background: rgb(183, 199, 211);
+                        width: 20px;
+                        animation: middleBar 3s infinite 0.5s;
+                        -webkit-animation: middleBar 3s infinite 0.5s;
+                    } 
+  
+                    @keyframes middleBar {
+                        0% {width: 0px}
+                        50% {width: 20px}
+                        100% {width: 0px}
+                    } 
+
+                    @-webkit-keyframes middleBar {
+                        0% {width: 0px}
+                        50% {width: 20px}
+                        100% {width: 0px}
+                    }
+
+                    .icon-bars.overlay::before {
+                        background: rgb(97, 114, 129);
+                        background: rgb(183, 199, 211);
+                        width: 10px;
+                        animation: topBar 3s infinite 0.2s;
+                        -webkit-animation: topBar 3s infinite 0s;
+                    }
+
+                    @keyframes topBar {
+                        0% {width: 0px}
+                        50% {width: 10px}
+                        100% {width: 0px}
+                    } 
+    
+                    @-webkit-keyframes topBar {
+                        0% {width: 0px}
+                        50% {width: 10px}
+                        100% {width: 0px}
+                    }
+
+                    .icon-bars.overlay::after {
+                        background: rgb(97, 114, 129);
+                        background: rgb(183, 199, 211);
+                        width: 15px;
+                        animation: bottomBar 3s infinite 1s;
+                        -webkit-animation: bottomBar 3s infinite 1s;
+                    }
+
+                    @keyframes bottomBar {
+                        0% {width: 0px}
+                        50% {width: 15px}
+                        100% {width: 0px}
+                    }
+
+                    @-webkit-keyframes bottomBar {
+                        0% {width: 0px}
+                        50% {width: 15px}
+                        100% {width: 0px}
+                    }
+
+                    .menuIcon.toggle .icon-bars {
+                        top: 5px;
+                        transform: translate3d(0, 5px, 0) rotate(135deg);
+                        transition-delay: 0.1s;
+                        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+
+                    .menuIcon.toggle .icon-bars::before {
+                        top: 0;
+                        transition-delay: 0.1s;
+                        opacity: 0;
+                    }
+
+                    .menuIcon.toggle .icon-bars::after {
+                        top: 10px;
+                        transform: translate3d(0, -10px, 0) rotate(-270deg);
+                        transition-delay: 0.1s;
+                        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+
+                    .menuIcon.toggle .icon-bars.overlay {
+                        width: 20px;
+                        opacity: 0;
+                        -webkit-transition: all 0s ease 0s;
+                        transition: all 0s ease 0s;
+                    }
+                }
+
+                .overlay-menu {
+                    background: lightblue;
+                    color: rgb(13, 26, 38);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding-right: 15px;
+                    transform: translateX(-100%);
+                    width: 100vw;
+                    height: 100vh;
+                    -webkit-transition: transform 0.2s ease-out;
+                    transition: transform 0.2s ease-out;
+                }
+
+                .overlay-menu ul, .overlay-menu li {
+                    display: block;
+                    position: relative;
+                }
+
+                .overlay-menu li a {
+                    display: block;
+                    font-size: 1.8em;
+                    letter-spacing: 4px;
+                    opacity: 0;
+                    padding: 10px 0;
+                    text-align: right;
+                    text-transform: uppercase;
+                    -webkit-transition: color 0.3s ease;
+                    transition: color 0.3s ease;
+                    -webkit-transition: 0.2s opacity 0.2s ease-out;
+                    transition: 0.2s opacity 0.2s ease-out;
+                }
+
+                .overlay-menu li a:hover,
+                .overlay-menu li a:active {
+                    color: rgb(28, 121, 184);
+                    -webkit-transition: color 0.3s ease;
+                    transition: color 0.3s ease;
+                }
+
+                @font-face{
+                    font-family: GhostFace;
+                    src: url(GhostlikeDemoRegular.woff);
+                }
+
+                @font-face{
+                    font-family: dotrix;
+                    src: url(dotrix-dotrix-regular-400.ttf);
+                }
+
+                @font-face {
+                    font-family: slotluxe;
+                    src: url(slotluxe-slotluxe-svg-400.ttf);
+                }
+
+                .title{
+                    font-family: 'Press Start 2P', system-ui;
+                    font-size: 150px;
+                    margin-top: 100px;
+                    margin-left: 100px;
+                    color: whitesmoke;
+
+                }
+
+                button{
+                    background-color: white;
+                    display: inline-block;
+                    margin-top: 19%;
+                    margin-left: 25%;
+                }
+
+                #btn {
+                    background-color: white;
+                    display: inline-block;
+                    margin-top: 19%;
+                    margin-left: 25%;
+                }
+
+                p{
+                    font-family: slotluxe;
+                }
+
+                .heading{
+                    font-family: dotrix;
+                    font-size: 100px;
+                    padding-left: 40px;
+                    padding-right: 40px;
+                }
+
+                .content{
+                    background-image: url("https://cdn.discordapp.com/attachments/1207540878051381278/1218177540737339402/image.png?ex=6606b73e&is=65f4423e&hm=6970f79700d483bf6785f2ebb2c78f310411a23b9fbcf708390779facf2928ae&");
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+
+                .bye{
+                    background-image: url("game1.png");
+                }
+
+                .lead{
+                    color: white;
+                }
+        </style>
+    </head>
+
+    <body>
+        <nav id="navbar" class="navbar">
+            <div class="nav-wrapper">
+                <ul id="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#content">The Game Developers</a></li>
+                    <li><a href="#bye">The Game</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="menuIcon">
+            <span class="icon icon-bars"></span>
+            <span class="icon icon-bars overlay"></span>
+        </div>
+
+
+        <div class="overlay-menu">
+            <ul id="menuu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#content">The Game Developers</a></li>
+                <li><a href="#bye">The Game</a></li>
+            </ul>
+        </div>
+        
+        <div class = "container">
+            <div class = "intro" id = "intro">
+                <h1 class = "title">Memory<br>Moduli</h1>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section class = "content" id = "content">       
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h2 class="display-4 title">About Our Game</h2>
+                <p class="lead">The best game to test your memory and following skills</p>
+            </div>
+        
+            <div class="container">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">1</h4>
+                    </div>
+                  
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">Kylie Zaratan</h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Graphic Designer</li>
+                            <li>Game Developer</li>
+                            <li>Playtester</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">2</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">Nathan Sierte</h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Graphic Designer</li>
+                            <li>Game Developer</li>
+                            <li>Playtester</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">3</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">Gianna Cruz</h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>About Page</li>
+                            <li>Graphic Designer</li>
+                            <li>Playtester</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">!!!</h4>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">TIPS & TRICKS</h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>The game really gets challenging as it goes on, but you'll get better with practice.</li>
+                            <li>Have sharp eyes and try your best to remember the patterns!</li>
+                            <li>Have fun c:</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">***</h4>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">References</h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>can we have a pop up without the use of alert or windows.alert. (n.d.). Stack Overflow. https://stackoverflow.com/questions/17818229/can-we-have-a-pop-up-without-the-use-of-alert-or-windows-alert <br> Cannon, A. R. (2021, December 27). Making an AR game - Samsung Internet Developers - medium. Medium. https://medium.com/samsung-internet-dev/making-an-ar-game-with-aframe-529e03ae90cb <br> Cannot click button in HTML? (n.d.). Stack Overflow. https://stackoverflow.com/questions/52373027/cannot-click-button-in-html<br>  Colton, A. (2021, July 7). How to Build a Website with Django and Python (part one) - Alizarin 9 Inc. Alizarin 9 Inc. - Creative Marketing & Publishing. https://www.alizarin9.com/blog/how-to-build-a-website-with-django-and-python/ <br> Dalibor. (2022, September 25). Using libphonenumber for International Phone Numbers | Phrase. Phrase. https://phrase.com/blog/posts/libphonenumber-international-phone-numbers/ <br> Disable user from typing in input. (n.d.). Stack Overflow. https://stackoverflow.com/questions/60555557/disable-user-from-typing-in-input <br> Disabling and enabling a html input button. (n.d.-a). Stack Overflow. https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button <br> Disabling and enabling a html input button. (n.d.-b). Stack Overflow. https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button <br> How do I split a string into an array of characters? (n.d.). Stack Overflow. https://stackoverflow.com/questions/6484670/how-do-i-split-a-string-into-an-array-of-characters<br>  How to get a number value from an input field? (n.d.). Stack Overflow. https://stackoverflow.com/questions/28695617/how-to-get-a-number-value-from-an-input-field <br> How to prevent user from typing in text field without disabling the field? (n.d.). Stack Overflow. https://stackoverflow.com/questions/6951658/how-to-prevent-user-from-typing-in-text-field-without-disabling-the-field <br> How to randomize (shuffle) a JavaScript array? (n.d.). Stack Overflow. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array <br> HTML - appendChild() in document itself (body). (n.d.). Stack Overflow. https://stackoverflow.com/questions/36604471/html-appendchild-in-document-itself-body <br> Randomizing ENTIRE image gallery. (2021, November 3). Wix Studio Community Forum. https://forum.wixstudio.com/t/randomizing-entire-image-gallery/5022 <br> Zohar. (2021, May 24). shuffle images from pool [Online forum post]. Forum. https://forum.cogsci.nl/discussion/7213/shuffle-images-from-pool</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+            <br>
+            <br>
+            <br>
+        </section>
+        
+        <section class = "bye" id = "bye" >
+            <h2>G?</h2>
+            <a id="btn" class="heading" href="index.html">
+                   PLAY OUR GAME
+            </a>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </section>
+            
+        <script>
+            let menuIcon = document.querySelector('.menuIcon');
+            let nav = document.querySelector('.overlay-menu');
+
+            menuIcon.addEventListener('click', () => {
+                if (nav.style.transform != 'translateX(0%)') {
+                    nav.style.transform = 'translateX(0%)';
+                    nav.style.transition = 'transform 0.2s ease-out';
+                }
+                else { 
+                    nav.style.transform = 'translateX(-100%)';
+                    nav.style.transition = 'transform 0.2s ease-out';
+                }
+            });
+
+            let toggleIcon = document.querySelector('.menuIcon');
+            
+            toggleIcon.addEventListener('click', () => {
+                if (toggleIcon.className != 'menuIcon toggle') {
+                    toggleIcon.className += ' toggle';
+                }
+                else {
+                    toggleIcon.className = 'menuIcon';
+                }
+            });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><div id="speechify-global-notifications"></div><div id="speechify-selection-mode" style="position: fixed; top: 0px; right: 0px; width: 100%; min-height: 100%; z-index: 2147483640; display: none; pointer-events: auto;"></div><div id="speechify-screenshot-mode" style="position: fixed; top: 0px; right: 0px; width: 100%; min-height: 100%; z-index: 2147483640; display: none !important;"></div><div id="speechify-shortcuts-prompt"></div>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+        <script src="../../assets/js/vendor/holder.min.js"></script>
+        
+        <script>
+            Holder.addTheme('thumb', {
+            bg: '#55595c',
+            fg: '#eceeef',
+            text: 'Thumbnail'
+            });
+        </script>
+    </body>
+</html>
